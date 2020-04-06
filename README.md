@@ -67,10 +67,11 @@ mistakes I have made in the past while developing. Key topics are:
     which in turn broke a different app that depended on the CRAN
     version.
 
-  - **Solution:** Use `renv` to control project specific dependencies. I
-    have never actually run into the problem I described but the thought
-    of project specific dependencies makes me happy and less nervous
-    about things breaking.
+  - **Solution:** Use `renv` to control project specific dependencies.
+
+Note: I have never actually run into the problem I described but the
+thought of project specific dependencies makes me happy and less nervous
+about things breaking.
 
 ## Testing with `expect_` functions from `testthat`
 
