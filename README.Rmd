@@ -51,3 +51,5 @@ Note: I have never actually run into the problem I described but the thought of 
 Note: `shinytest` does have a solution for handling dynamic data which is to use dummy data while in test mode, see [here](https://rstudio.github.io/shinytest/articles/in-depth.html#dealing-with-dynamic-data). However, to my knowledge `shinytest` cannot introduce randomness by design, only control it, see [here](https://rstudio.github.io/shinytest/articles/in-depth.html#controlling-randomness). 
 
 For my particular use case, a user can generate many different outputs by selecting values from numerous dropdowns. My main concern is that regardless of what they pick, the output makes sense. As a result, I prefer a set of tests that randomly pick certain values from dropdowns and compare the actual result to the expected result with `expect_` functions from `testthat`.
+
+If you decide to write tests that introduce randomness, make sure you have a method of retrieving the random inputs that cause a test to fail. I have use `assign()` to assign random inputs to the global environment.

@@ -95,3 +95,7 @@ regardless of what they pick, the output makes sense. As a result, I
 prefer a set of tests that randomly pick certain values from dropdowns
 and compare the actual result to the expected result with `expect_`
 functions from `testthat`.
+
+If you decide to write tests that introduce randomness, make sure you
+have a method of retrieving the random inputs that cause a test to fail.
+I have use `assign()` to assign random inputs to the global environment.
