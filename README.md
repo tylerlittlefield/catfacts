@@ -19,6 +19,7 @@ mistakes I have made in the past while developing. Key topics are:
 
     .
     ├── R
+    │   └── utils.R
     ├── README.Rmd
     ├── README.md
     ├── catfacts.Rproj
