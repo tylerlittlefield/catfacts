@@ -38,7 +38,8 @@ mistakes I have made in the past while developing. Key topics are:
     │   ├── activate.R
     │   ├── library
     │   │   └── R-3.6
-    │   └── settings.dcf
+    │   ├── settings.dcf
+    │   └── staging
     ├── renv.lock
     ├── server.R
     ├── tests
@@ -100,3 +101,14 @@ functions from `testthat`.
 If you decide to write tests that introduce randomness, make sure you
 have a method of retrieving the random inputs that cause a test to fail.
 I have use `assign()` to assign random inputs to the global environment.
+
+## Utilities for testing
+
+Some utility functions for testing are provided in the `.Rprofile`. Note
+that these will always available on a fresh R session.
+
+  - `test_app()` runs all tests found in `tests/testthat`
+  - `test_menu()` runs only the tests you pick from an interactive menu
+    in the console
+  - `test_report()` writes the test results to a csv in the root
+    directory of the project

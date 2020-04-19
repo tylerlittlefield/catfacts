@@ -53,3 +53,11 @@ Note: `shinytest` does have a solution for handling dynamic data which is to use
 For my particular use case, a user can generate many different outputs by selecting values from numerous dropdowns. My main concern is that regardless of what they pick, the output makes sense. As a result, I prefer a set of tests that randomly pick certain values from dropdowns and compare the actual result to the expected result with `expect_` functions from `testthat`.
 
 If you decide to write tests that introduce randomness, make sure you have a method of retrieving the random inputs that cause a test to fail. I have use `assign()` to assign random inputs to the global environment.
+
+## Utilities for testing
+
+Some utility functions for testing are provided in the `.Rprofile`. Note that these will always available on a fresh R session.
+
+* `test_app()` runs all tests found in `tests/testthat`
+* `test_menu()` runs only the tests you pick from an interactive menu in the console
+* `test_report()` writes the test results to a csv in the root directory of the project
