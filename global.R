@@ -3,10 +3,8 @@ library(reactable)
 library(httr)
 library(dplyr)
 
-cat_facts <- GET("https://cat-fact.herokuapp.com/facts") %>%
-  content() %>%
-  .[["all"]] %>%
-  lapply("[[", "text") %>%
-  .[nchar(.) > 20]
+invisible(lapply(list.files("R", full.names = TRUE), source))
+
+cat_facts <- fetch_facts("https://cat-fact.herokuapp.com/facts")
 
 contact <- readRDS("data/contact.rds")
