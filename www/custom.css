@@ -1,5 +1,16 @@
-@import url("https://fonts.googleapis.com/css2?family=Sen:wght@400&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Lato&display=swap");
 
-body {
-  font-family: 'Sen';
+/* header font */
+.main-header .logo {
+  font-family: 'Lato', sans-serif;
+}
+
+/* sidebar font */
+.main-sidebar {
+  font-family: 'Lato', sans-serif;
+}
+
+/* headers font */
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+  font-family: 'Lato', sans-serif;
 }

@@ -19,6 +19,10 @@ mistakes I have made in the past while developing. Key topics are:
 
     .
     ├── R
+    │   ├── ui_dashboard_body.R
+    │   ├── ui_dashboard_header.R
+    │   ├── ui_dashboard_sidebar.R
+    │   ├── ui_tabs.R
     │   └── utils.R
     ├── README.Rmd
     ├── README.md
@@ -37,7 +41,7 @@ mistakes I have made in the past while developing. Key topics are:
     ├── renv
     │   ├── activate.R
     │   ├── library
-    │   │   └── R-3.6
+    │   │   └── R-4.0
     │   ├── settings.dcf
     │   └── staging
     ├── renv.lock
