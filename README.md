@@ -15,6 +15,8 @@ mistakes I have made in the past while developing. Key topics are:
   - Handling and organizing data
   - Documenting and controlling dependencies
   - Testing with `expect_` functions from `testthat`
+  - Testing utilities
+  - Continous integration
 
 ## Structure
 
@@ -117,3 +119,15 @@ that these will always available on a fresh R session.
     in the console
   - `test_report()` writes the test results to a csv in the root
     directory of the project
+
+## Continuous integration
+
+A workflow for running all tests with each push or pull request is
+provided in
+[`.github/workflows/build.yaml`](.github/workflows/build.yaml). This
+runs all the tests and triggers a “pass” if all tests pass or a “fail”
+if any of the tests fail, this is done by running:
+
+``` r
+testthat::test_dir("tests/testthat", stop_on_failure = TRUE)
+```
