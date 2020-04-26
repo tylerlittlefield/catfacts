@@ -1,3 +1,4 @@
 ^renv$
 ^renv\.lock$
 ^data-raw$
+^\.github/workflows/R-CMD-check\.yaml$
