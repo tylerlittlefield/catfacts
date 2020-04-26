@@ -28,4 +28,5 @@ jobs:
           R -e 'renv::restore()'
       - name: Test app
         run: |
+          R -e 'shinytest::installDependencies()'
           R -e 'testthat::test_dir("tests/testthat")'
