@@ -1,0 +1,33 @@
+on: [push, pull_request]
+
+name: build
+
+env:
+  RENV_PATHS_ROOT: ~/.local/share/renv
+
+jobs:
+  build:
+    runs-on: macOS-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v2
+      - name: Setup R
+        uses: r-lib/actions/setup-r@master
+        with:
+          r-version: '4.0.0'
+      - name: Cache packages
+        uses: actions/cache@v1
+        with:
+          path: ${{ env.RENV_PATHS_ROOT }}
+          key: ${{ runner.os }}-renv-${{ hashFiles('**/renv.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-renv-
+      - name: Install packages
+        run: |
+          R -e 'install.packages("renv")'
+          R -e 'renv::restore()'
+      - name: Test app
+        run: |
+          R -e 'shinytest::installDependencies()'
+          R -e 'testthat::test_dir("tests/testthat", stop_on_failure = TRUE)'
+

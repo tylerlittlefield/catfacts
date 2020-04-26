@@ -1,17 +1,23 @@
+library(testthat)
+library(shinytest)
+
 context("cat fact")
-
-app <- ShinyDriver$new(test_path("../../"))
-
 test_that("Random cat facts are generated", {
+
+  # start the app
+  app <- ShinyDriver$new(test_path("../../"))
+
+  # click the go button
   app$setInputs(go = "click")
 
-  x <- app$getAllValues()
+  # get all app values
+  appvals <- app$getAllValues()
 
-  cat_fact_id   <- x$export$n
-  cat_fact_data <- x$export$cat_facts
+  # grab fact id
+  cat_fact_id <- appvals$export$n
 
-  expect_equal(
-    object = x$output$fact,
-    expected = cat_fact_data[[cat_fact_id]]
-  )
+  # grab fact generated
+  cat_fact_data <- appvals$export$cat_facts
+
+  expect_equal(appvals$output$fact, cat_fact_data[[cat_fact_id]])
 })

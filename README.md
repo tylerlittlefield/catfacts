@@ -5,6 +5,7 @@
 
 <!-- badges: start -->
 
+[![build](https://github.com/tyluRp/catfacts/workflows/build/badge.svg)](https://github.com/tyluRp/catfacts/actions)
 <!-- badges: end -->
 
 The goal of catfacts is to demonstrate an opinionated approach to
