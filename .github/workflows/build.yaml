@@ -9,20 +9,19 @@ jobs:
   build:
     runs-on: macOS-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: r-lib/actions/setup-r@master
+      - name: Checkout repo
+        uses: actions/checkout@v2
+      - name: Setup R
+        uses: r-lib/actions/setup-r@master
         with:
           r-version: '4.0.0'
-      - name: Cache packages
+      - name: Cache Renv packages
         uses: actions/cache@v1
         with:
-          path: ${{ env.RENV_PATHS_ROOT }}
-          key: ${{ runner.os }}-renv-${{ hashFiles('**/renv.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-renv-
-
-      - name: Restore packages
-        shell: Rscript {0}
+          path: $HOME/.local/share/renv
+          key: r-${{ hashFiles('renv.lock') }}
+          restore-keys: r-
+      - name: Install packages
         run: |
-          if (!requireNamespace("renv", quietly = TRUE)) install.packages("renv")
-          renv::restore()
+          R -e 'install.packages("renv")'
+          R -e 'renv::restore()'
