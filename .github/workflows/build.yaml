@@ -25,3 +25,6 @@ jobs:
         run: |
           R -e 'install.packages("renv")'
           R -e 'renv::restore()'
+      - name: Test app
+        run: |
+          R -e 'testthat::test_dir("tests/testthat")'
