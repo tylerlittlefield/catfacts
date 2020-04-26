@@ -12,7 +12,12 @@ test_that("Random cat facts are generated", {
 
   # get all app values
   appvals <- app$getAllValues()
-  cat_fact_id <- x$export$n
-  cat_fact_data <- x$export$cat_facts
-  expect_equal(x$output$fact, cat_fact_data[[cat_fact_id]])
+
+  # grab fact id
+  cat_fact_id <- appvals$export$n
+
+  # grab fact generated
+  cat_fact_data <- appvals$export$cat_facts
+
+  expect_equal(appvals$output$fact, cat_fact_data[[cat_fact_id]])
 })

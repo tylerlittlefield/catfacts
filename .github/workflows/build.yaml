@@ -29,4 +29,6 @@ jobs:
       - name: Test app
         run: |
           R -e 'shinytest::installDependencies()'
-          R -e 'testthat::test_dir("tests/testthat")'
+          R -e 'out <- testthat::test_dir('tests/testthat/')'
+          R -e 'stopifnot(all(dplyr::select(tibble::as_tibble(out), -result)$failed == 0))'
+
