@@ -5,6 +5,7 @@
 
 <!-- badges: start -->
 
+[![build](https://github.com/tyluRp/catfacts/workflows/build/badge.svg)](https://github.com/tyluRp/catfacts/actions)
 <!-- badges: end -->
 
 The goal of catfacts is to demonstrate an opinionated approach to
@@ -37,7 +38,7 @@ mistakes I have made in the past while developing. Key topics are:
     ├── renv
     │   ├── activate.R
     │   ├── library
-    │   │   └── R-3.6
+    │   │   └── R-4.0
     │   ├── settings.dcf
     │   └── staging
     ├── renv.lock

@@ -1,7 +1,9 @@
-library(shiny)
-library(reactable)
-library(httr)
-library(dplyr)
+suppressPackageStartupMessages({
+  library(shiny)
+  library(reactable)
+  library(httr)
+  library(dplyr)
+})
 
 invisible(lapply(list.files("R", full.names = TRUE), source))
 

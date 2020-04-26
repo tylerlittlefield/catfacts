@@ -14,6 +14,7 @@ knitr::opts_chunk$set(
 # catfacts
 
 <!-- badges: start -->
+[![build](https://github.com/tyluRp/catfacts/workflows/build/badge.svg)](https://github.com/tyluRp/catfacts/actions)
 <!-- badges: end -->
 
 The goal of catfacts is to demonstrate an opinionated approach to structuring a shiny app. Primary motivation for catfacts is to avoid mistakes I have made in the past while developing. Key topics are:
