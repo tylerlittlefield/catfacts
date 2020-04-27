@@ -11,7 +11,7 @@ knitr::opts_chunk$set(
 )
 ```
 
-# catfacts
+# catfacts <img src="www/logo.png" align="right" height=150/>
 
 <!-- badges: start -->
 [![build](https://github.com/tyluRp/catfacts/workflows/build/badge.svg)](https://github.com/tyluRp/catfacts/actions)

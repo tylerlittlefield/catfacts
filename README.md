@@ -1,7 +1,7 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# catfacts
+# catfacts <img src="www/logo.png" align="right" height=150/>
 
 <!-- badges: start -->
 
@@ -56,7 +56,8 @@ mistakes I have made in the past while developing. Key topics are:
     │   └── testthat.R
     ├── ui.R
     └── www
-        └── custom.css
+        ├── custom.css
+        └── logo.png
 
 ## Handling and organizing data
 
