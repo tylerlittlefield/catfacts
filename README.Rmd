@@ -24,7 +24,7 @@ The goal of catfacts is to demonstrate an opinionated approach to structuring a 
 * [Documenting dependencies](#documenting-dependencies)
 * [Testing with `testthat`](#testing-with-testthat)
 * [Testing utilities](#testing-utilities)
-* [Continous integration](#continous-integration)
+* [Continous integration](#continuous-integration)
 
 ## Structure
 
