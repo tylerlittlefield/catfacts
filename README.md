@@ -17,7 +17,7 @@ mistakes I have made in the past while developing. Key topics are:
   - [Documenting dependencies](#documenting-dependencies)
   - [Testing with `testthat`](#testing-with-testthat)
   - [Testing utilities](#testing-utilities)
-  - [Continous integration](#continuous-integration)
+  - [Continuous integration](#continuous-integration)
 
 ## Structure
 
