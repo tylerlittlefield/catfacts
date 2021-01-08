@@ -2,19 +2,31 @@ on: [push, pull_request]
 
 name: build
 
-env:
-  RENV_PATHS_ROOT: ~/.local/share/renv
-
 jobs:
   build:
-    runs-on: macOS-latest
+    runs-on: ${{ matrix.config.os }}
+
+    name: ${{ matrix.config.os }} (${{ matrix.config.r }})
+
+    strategy:
+      fail-fast: false
+      matrix:
+        config:
+          - {os: macOS-latest,   r: 'devel'}
+          - {os: macOS-latest,   r: '4.0'}
+
+    env:
+      RENV_PATHS_ROOT: ~/.local/share/renv
+
     steps:
       - name: Checkout repo
         uses: actions/checkout@v2
+
       - name: Setup R
         uses: r-lib/actions/setup-r@master
         with:
           r-version: '4.0.0'
+
       - name: Cache packages
         uses: actions/cache@v1
         with:
@@ -22,10 +34,12 @@ jobs:
           key: ${{ runner.os }}-renv-${{ hashFiles('**/renv.lock') }}
           restore-keys: |
             ${{ runner.os }}-renv-
+
       - name: Install packages
         run: |
           R -e 'install.packages("renv")'
           R -e 'renv::restore()'
+
       - name: Test app
         run: |
           R -e 'shinytest::installDependencies()'
